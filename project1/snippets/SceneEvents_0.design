@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<groups>
+    <group eventID="2" id="0">
+        <event-collide-typetotype comment="false" x="74" y="80">
+            <group eventID="2" id="-1">
+                <apply-filter comment="false" x="85" y="112">
+                    <ACTOR eid="2" id="0"/>
+                    <filter-negative comment="false" id="1" x="0" y="0"/>
+                </apply-filter>
+            </group>
+            <actortype eid="0" id="0"/>
+            <actortype eid="2" id="1"/>
+        </event-collide-typetotype>
+    </group>
+    <group eventID="2" id="-1"/>
+</groups>
