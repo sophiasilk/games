@@ -77,7 +77,7 @@
     </attcats>
     <props/>
     <attributes>
-        <number cid="-1" id="5" name="health points" save="true" value="0"/>
+        <number cid="-1" id="5" name="health points" save="true" value="0.0"/>
         <number cid="-1" id="3" name="bulletx" save="true" value="0.0"/>
         <number cid="-1" id="4" name="bullety" save="true" value="0.0"/>
         <number cid="-1" id="0" name="hero x" save="true" value="0.0"/>
