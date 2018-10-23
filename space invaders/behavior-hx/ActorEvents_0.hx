@@ -71,16 +71,65 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 class ActorEvents_0 extends ActorScript
 {
+	public var _shipspeed:Float;
 	
 	
 	public function new(dummy:Int, actor:Actor, dummy2:Engine)
 	{
 		super(actor);
+		nameMap.set("ship speed", "_shipspeed");
+		_shipspeed = 20;
 		
 	}
 	
 	override public function init()
 	{
+		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				if(isKeyDown("right"))
+				{
+					actor.setXVelocity(_shipspeed);
+				}
+				else if(isKeyDown("left"))
+				{
+					actor.setXVelocity(-(_shipspeed));
+				}
+				else if((!(isKeyDown("right")) && !(isKeyDown("left"))))
+				{
+					actor.setXVelocity(0);
+				}
+			}
+		});
+		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				if((actor.getScreenX() < 0))
+				{
+					actor.setX(1);
+				}
+				else if((actor.getScreenX() > (getScreenWidth() - (actor.getWidth()))))
+				{
+					actor.setX(((getScreenWidth() - (actor.getWidth())) - 1));
+				}
+			}
+		});
+		
+		/* =========================== Keyboard =========================== */
+		addKeyStateListener("action1", function(pressed:Bool, released:Bool, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled && pressed)
+			{
+				createRecycledActor(getActorType(4), actor.getX(), actor.getY(), Script.FRONT);
+				getLastCreatedActor().applyImpulse(0, -1, 40);
+			}
+		});
 		
 	}
 	
