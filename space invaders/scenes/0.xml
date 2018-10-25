@@ -10,11 +10,11 @@
     <terrainRegions/>
     <actors>
         <actor a="0.0" aid="1" c="false" group="3" id="0" name="ship 1" sx="1.0" sy="1.0" x="302" y="407" z="0"/>
-        <actor a="0.0" aid="2" c="false" group="3" id="2" name="enemy ship 2" sx="1.0" sy="1.0" x="24" y="21" z="0"/>
-        <actor a="0.0" aid="3" c="false" group="3" id="2" name="enemy ship 3" sx="1.0" sy="1.0" x="150" y="26" z="0"/>
-        <actor a="0.0" aid="4" c="false" group="3" id="2" name="enemy ship 4" sx="1.0" sy="1.0" x="279" y="26" z="0"/>
-        <actor a="0.0" aid="5" c="false" group="3" id="2" name="enemy ship 5" sx="1.0" sy="1.0" x="403" y="26" z="0"/>
-        <actor a="0.0" aid="6" c="false" group="3" id="2" name="enemy ship 6" sx="1.0" sy="1.0" x="516" y="28" z="0"/>
+        <actor a="0.0" aid="2" c="false" group="4" id="2" name="enemy ship 2" sx="1.0" sy="1.0" x="24" y="21" z="0"/>
+        <actor a="0.0" aid="3" c="false" group="4" id="2" name="enemy ship 3" sx="1.0" sy="1.0" x="150" y="26" z="0"/>
+        <actor a="0.0" aid="4" c="false" group="4" id="2" name="enemy ship 4" sx="1.0" sy="1.0" x="279" y="26" z="0"/>
+        <actor a="0.0" aid="5" c="false" group="4" id="2" name="enemy ship 5" sx="1.0" sy="1.0" x="403" y="26" z="0"/>
+        <actor a="0.0" aid="6" c="false" group="4" id="2" name="enemy ship 6" sx="1.0" sy="1.0" x="516" y="28" z="0"/>
     </actors>
     <snippets/>
     <terrain/>

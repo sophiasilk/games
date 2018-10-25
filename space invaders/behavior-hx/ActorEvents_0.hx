@@ -78,7 +78,7 @@ class ActorEvents_0 extends ActorScript
 	{
 		super(actor);
 		nameMap.set("ship speed", "_shipspeed");
-		_shipspeed = 20;
+		_shipspeed = 20.0;
 		
 	}
 	
