@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pack>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="0" fixedrot="false" fric="0.2" gid="3" id="0" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="enemy" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="1" static="false">
+        <snippets/>
+    </actor>
+    <sprite atlasID="0" default="3" defaultAnimation="3" desc="" height="90" id="1" name="enemy" shared="false" width="90">
+        <anim across="2" down="1" durations="200,200" height="90" id="0" loop="true" name="walking-R" numframes="2" originx="45" originy="45" sync="false" version="2" width="180">
+            <poly data="4,0,0,90,0,90,90,0,90" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="2" down="1" durations="200,200" height="90" id="1" loop="true" name="walking-L" numframes="2" originx="45" originy="45" sync="false" version="2" width="180">
+            <poly data="4,0,0,90,0,90,90,0,90" density="0.1" fric="0.2" gid="-1000" id="0" name="walking- R" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="2" down="1" durations="180,180" height="90" id="2" loop="true" name="attack" numframes="2" originx="45" originy="45" sync="false" version="2" width="180">
+            <poly data="4,0,0,90,0,90,90,0,90" density="0.1" fric="0.2" gid="-1000" id="0" name="attack" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="1" down="1" durations="100" height="90" id="3" loop="true" name="chillen" numframes="1" originx="45" originy="45" sync="false" version="2" width="90">
+            <poly data="4,0,0,90,0,90,90,0,90" density="0.1" fric="0.2" gid="-1000" id="0" name="chillen" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
+    <tileset across="2" atlasID="0" desc="" down="3" id="3" name="yee" oid="-1" shared="false" th="32" tw="32">
+        <tile collision="-1" data="" durations="100" frames="0" id="0" order="-1"/>
+        <tile collision="-1" data="" durations="100" frames="1" id="3" order="-1"/>
+        <tile collision="-1" data="" durations="100" frames="2" id="1" order="-1"/>
+        <tile collision="-1" data="" durations="100" frames="3" id="4" order="-1"/>
+        <tile collision="-1" data="" durations="100" frames="4" id="2" order="-1"/>
+        <tile collision="-1" data="" durations="100" frames="5" id="5" order="-1"/>
+    </tileset>
+</pack>
