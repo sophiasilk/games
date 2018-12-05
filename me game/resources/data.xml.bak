@@ -16,6 +16,12 @@
         <anim across="1" down="1" durations="100" height="90" id="3" loop="true" name="chillen" numframes="1" originx="45" originy="45" sync="false" version="2" width="90">
             <poly data="4,0,0,90,0,90,90,0,90" density="0.1" fric="0.2" gid="-1000" id="0" name="chillen" rest="0.0" sensor="false"/>
         </anim>
+        <anim across="1" down="1" durations="200" height="90" id="4" loop="true" name="idle-L" numframes="1" originx="45" originy="45" sync="false" version="2" width="90">
+            <poly data="4,0,0,90,0,90,90,0,90" density="0.1" fric="0.2" gid="-1000" id="0" name="walking- R" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="1" down="1" durations="200" height="90" id="5" loop="true" name="idle-R" numframes="1" originx="45" originy="45" sync="false" version="2" width="90">
+            <poly data="4,0,0,90,0,90,90,0,90" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
     </sprite>
     <tileset across="2" atlasID="0" desc="" down="3" id="3" name="yee" oid="-1" shared="false" th="32" tw="32">
         <tile collision="-1" data="" durations="100" frames="0" id="0" order="-1"/>
