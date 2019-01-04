@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <pack>
+    <background atlasID="0" desc="" durations="100" dx="-0.0" dy="-0.0" height="64" id="7" name="backk" numframes="1" oid="-1" repeats="false" resized="false" shared="false" width="64" xpf="1.0" ypf="1.0"/>
     <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="2" fixedrot="false" fric="0.2" gid="3" id="4" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="enemy" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="5" static="false">
         <snippets/>
     </actor>
@@ -14,14 +15,16 @@
             <poly data="4,0,0,120,0,120,130,0,130" density="0.1" fric="0.2" gid="-1000" id="0" name="walk- R" rest="0.0" sensor="false"/>
         </anim>
     </sprite>
-    <tileset across="4" atlasID="0" desc="" down="2" id="6" name="zhe ground" oid="-1" shared="false" th="32" tw="32">
-        <tile collision="-1" data="" durations="100,100" frames="0" id="0" order="-1"/>
+    <tileset across="5" atlasID="0" desc="" down="2" id="6" name="zhe ground" oid="-1" shared="false" th="32" tw="32">
+        <tile collision="-1" data="" durations="100" frames="0" id="0" order="-1"/>
         <tile collision="-1" data="" durations="100" frames="1" id="1" order="-1"/>
         <tile collision="-1" data="" durations="100" frames="2" id="2" order="-1"/>
-        <tile collision="-1" data="" durations="100" frames="3" id="3" order="-1"/>
-        <tile collision="-1" data="" durations="100" frames="4" id="4" order="-1"/>
-        <tile collision="-1" data="" durations="100" frames="5" id="5" order="-1"/>
-        <tile collision="-1" data="" durations="100" frames="6" id="6" order="-1"/>
-        <tile collision="-1" data="" durations="100" frames="7" id="7" order="-1"/>
+        <tile collision="-1" data="" durations="100" frames="3" id="11" order="-1"/>
+        <tile collision="-1" data="" durations="100" frames="4" id="12" order="-1"/>
+        <tile collision="-1" data="" durations="100" frames="5" id="4" order="-1"/>
+        <tile collision="-1" data="" durations="100" frames="6" id="5" order="-1"/>
+        <tile collision="-1" data="" durations="100" frames="7" id="6" order="-1"/>
+        <tile collision="-1" data="" durations="100" frames="8" id="7" order="-1"/>
+        <tile collision="-1" data="" durations="100" frames="9" id="9" order="-1"/>
     </tileset>
 </pack>
