@@ -15,6 +15,17 @@
             <poly data="4,0,0,120,0,120,130,0,130" density="0.1" fric="0.2" gid="-1000" id="0" name="walk- R" rest="0.0" sensor="false"/>
         </anim>
     </sprite>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="3" fixedrot="false" fric="0.2" gid="3" id="8" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="hero" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="9" static="false">
+        <snippets/>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" height="122" id="9" name="hero" shared="false" width="50">
+        <anim across="2" down="2" durations="400,300,400" height="244" id="0" loop="true" name="front breathing" numframes="3" originx="25" originy="61" sync="false" version="2" width="100">
+            <poly data="4,0,0,50,0,50,122,0,122" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="2" down="2" durations="870,420,800,560" height="244" id="1" loop="true" name="front looking" numframes="4" originx="25" originy="61" sync="false" version="2" width="100">
+            <poly data="4,0,0,50,0,50,122,0,122" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 1" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
     <tileset across="5" atlasID="0" desc="" down="2" id="6" name="zhe ground" oid="-1" shared="false" th="32" tw="32">
         <tile collision="-1" data="" durations="100" frames="0" id="0" order="-1"/>
         <tile collision="-1" data="" durations="100" frames="1" id="1" order="-1"/>
