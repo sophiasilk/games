@@ -69,47 +69,42 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class ActorEvents_2 extends ActorScript
+class Design_20_20_shooting extends ActorScript
 {
-	public var _healthpoints:Float;
-	
-	/* ========================= Custom Event ========================= */
-	public function _customEvent_hit():Void
-	{
-		_healthpoints -= 1;
-		propertyChanged("_healthpoints", _healthpoints);
-		actor.setFilter([createNegativeFilter()]);
-		runLater(1000 * .1, function(timeTask:TimedTask):Void
-		{
-			actor.clearFilters();
-		}, actor);
-	}
 	
 	
 	public function new(dummy:Int, actor:Actor, dummy2:Engine)
 	{
 		super(actor);
-		nameMap.set("health points", "_healthpoints");
-		_healthpoints = 0.0;
+		nameMap.set("Actor", "actor");
 		
 	}
 	
 	override public function init()
 	{
 		
-		/* ======================== When Creating ========================= */
-		_healthpoints = asNumber(3);
-		propertyChanged("_healthpoints", _healthpoints);
-		
-		/* ======================== When Updating ========================= */
-		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		/* =========================== Keyboard =========================== */
+		addKeyStateListener("Action 1", function(pressed:Bool, released:Bool, list:Array<Dynamic>):Void
 		{
-			if(wrapper.enabled)
+			if(wrapper.enabled && pressed)
 			{
-				if((_healthpoints <= 0))
+				playSound(getSound(47));
+				createRecycledActor(getActorType(52), actor.getX(), actor.getY(), Script.FRONT);
+				if((actor.getAnimation() == "Up"))
 				{
-					playSound(getSound(8));
-					recycleActor(actor);
+					getLastCreatedActor().setYVelocity(-80);
+				}
+				else if((actor.getAnimation() == "Down"))
+				{
+					getLastCreatedActor().setYVelocity(80);
+				}
+				else if((actor.getAnimation() == "Left"))
+				{
+					getLastCreatedActor().setXVelocity(-80);
+				}
+				else if((actor.getAnimation() == "Right"))
+				{
+					getLastCreatedActor().setXVelocity(80);
 				}
 			}
 		});

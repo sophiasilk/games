@@ -8,8 +8,8 @@
     <regions/>
     <terrainRegions/>
     <actors>
-        <actor a="0.0" aid="1" c="false" group="3" id="4" name="enemy 1" sx="1.0" sy="1.0" x="510" y="277" z="0"/>
-        <actor a="0.0" aid="3" c="false" group="3" id="8" name="hero 3" sx="1.0" sy="1.0" x="188" y="261" z="0"/>
+        <actor a="0.0" aid="1" c="false" group="3" id="4" name="enemy 1" sx="1.0" sy="1.0" x="393" y="279" z="0"/>
+        <actor a="0.0" aid="3" c="false" group="0" id="8" name="hero 3" sx="1.0" sy="1.0" x="188" y="263" z="0"/>
     </actors>
     <snippets/>
     <terrain/>

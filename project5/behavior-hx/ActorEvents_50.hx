@@ -69,7 +69,7 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class ActorEvents_4 extends ActorScript
+class ActorEvents_50 extends ActorScript
 {
 	
 	
@@ -81,6 +81,38 @@ class ActorEvents_4 extends ActorScript
 	
 	override public function init()
 	{
+		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				if((actor.getAnimation() == "avoid"))
+				{
+					actor.applyImpulse((Engine.engine.getGameAttribute("hero x") - actor.getX()), (Engine.engine.getGameAttribute("hero y") - actor.getY()), -5);
+				}
+				else
+				{
+					actor.applyImpulse((Engine.engine.getGameAttribute("hero x") - actor.getX()), (Engine.engine.getGameAttribute("hero y") - actor.getY()), 5);
+				}
+			}
+		});
+		
+		/* ======================= Every N seconds ======================== */
+		runPeriodically(1000 * 10, function(timeTask:TimedTask):Void
+		{
+			if(wrapper.enabled)
+			{
+				if((actor.getAnimation() == "avoid"))
+				{
+					actor.setAnimation("" + "follow");
+				}
+				else
+				{
+					actor.setAnimation("" + "avoid");
+				}
+			}
+		}, actor);
 		
 	}
 	

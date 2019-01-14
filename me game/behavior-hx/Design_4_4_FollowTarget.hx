@@ -69,28 +69,49 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class ActorEvents_2 extends ActorScript
+class Design_4_4_FollowTarget extends ActorScript
 {
-	public var _healthpoints:Float;
-	
-	/* ========================= Custom Event ========================= */
-	public function _customEvent_hit():Void
-	{
-		_healthpoints -= 1;
-		propertyChanged("_healthpoints", _healthpoints);
-		actor.setFilter([createNegativeFilter()]);
-		runLater(1000 * .1, function(timeTask:TimedTask):Void
-		{
-			actor.clearFilters();
-		}, actor);
-	}
+	public var _TargetActor:Actor;
+	public var _DistanceX:Float;
+	public var _DistanceY:Float;
+	public var _Distance:Float;
+	public var _Direction:Float;
+	public var _Speed:Float;
+	public var _Margin:Float;
+	public var _Easing:Bool;
+	public var _MinimumEasingSpeed:Float;
+	public var _ScreenDiagonal:Float;
+	public var _StopwhenColliding:Bool;
+	public var _Collided:Bool;
 	
 	
 	public function new(dummy:Int, actor:Actor, dummy2:Engine)
 	{
 		super(actor);
-		nameMap.set("health points", "_healthpoints");
-		_healthpoints = 0.0;
+		nameMap.set("Actor", "actor");
+		nameMap.set("Target Actor", "_TargetActor");
+		nameMap.set("Distance X", "_DistanceX");
+		_DistanceX = 0.0;
+		nameMap.set("Distance Y", "_DistanceY");
+		_DistanceY = 0.0;
+		nameMap.set("Distance", "_Distance");
+		_Distance = 0.0;
+		nameMap.set("Direction", "_Direction");
+		_Direction = 0.0;
+		nameMap.set("Speed", "_Speed");
+		_Speed = 30.0;
+		nameMap.set("Margin", "_Margin");
+		_Margin = 0.0;
+		nameMap.set("Easing", "_Easing");
+		_Easing = true;
+		nameMap.set("Minimum Easing Speed", "_MinimumEasingSpeed");
+		_MinimumEasingSpeed = 5.0;
+		nameMap.set("Screen Diagonal", "_ScreenDiagonal");
+		_ScreenDiagonal = 0.0;
+		nameMap.set("Stop when Colliding", "_StopwhenColliding");
+		_StopwhenColliding = true;
+		nameMap.set("Collided", "_Collided");
+		_Collided = false;
 		
 	}
 	
@@ -98,19 +119,50 @@ class ActorEvents_2 extends ActorScript
 	{
 		
 		/* ======================== When Creating ========================= */
-		_healthpoints = asNumber(3);
-		propertyChanged("_healthpoints", _healthpoints);
+		_ScreenDiagonal = asNumber(Math.sqrt((Math.pow(getScreenWidth(), 2) + Math.pow(getScreenHeight(), 2))));
+		propertyChanged("_ScreenDiagonal", _ScreenDiagonal);
 		
 		/* ======================== When Updating ========================= */
 		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
 		{
 			if(wrapper.enabled)
 			{
-				if((_healthpoints <= 0))
+				if(((hasValue(_TargetActor)) && _TargetActor.isAlive()))
 				{
-					playSound(getSound(8));
-					recycleActor(actor);
+					_DistanceX = asNumber((_TargetActor.getXCenter() - actor.getXCenter()));
+					propertyChanged("_DistanceX", _DistanceX);
+					_DistanceY = asNumber((_TargetActor.getYCenter() - actor.getYCenter()));
+					propertyChanged("_DistanceY", _DistanceY);
+					_Distance = asNumber(Math.sqrt((Math.pow(_DistanceX, 2) + Math.pow(_DistanceY, 2))));
+					propertyChanged("_Distance", _Distance);
+					_Direction = asNumber(Utils.DEG * (Math.atan2(_DistanceY, _DistanceX)));
+					propertyChanged("_Direction", _Direction);
+					if(((_Distance > _Margin) && !((_StopwhenColliding && _Collided))))
+					{
+						if(_Easing)
+						{
+							actor.setVelocity(_Direction, (_MinimumEasingSpeed + (_Speed * ((_Distance - _Margin) / _ScreenDiagonal))));
+						}
+						else
+						{
+							actor.setVelocity(_Direction, _Speed);
+						}
+					}
+					else
+					{
+						actor.setVelocity(0, 0);
+					}
+					_Collided = false;
+					propertyChanged("_Collided", _Collided);
 				}
+			}
+		});
+		addCollisionListener(actor, function(event:Collision, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled && (_TargetActor == event.otherActor))
+			{
+				_Collided = true;
+				propertyChanged("_Collided", _Collided);
 			}
 		});
 		

@@ -40,6 +40,7 @@ import box2D.common.math.B2Vec2;
 import box2D.dynamics.B2Body;
 import box2D.dynamics.B2Fixture;
 import box2D.dynamics.joints.B2Joint;
+import box2D.collision.shapes.B2Shape;
 
 import motion.Actuate;
 import motion.easing.Back;
@@ -69,28 +70,18 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class ActorEvents_2 extends ActorScript
+class SceneEvents_0 extends SceneScript
 {
-	public var _healthpoints:Float;
+	public var _blurRadius:Float;
+	public var _s:Dynamic;
 	
-	/* ========================= Custom Event ========================= */
-	public function _customEvent_hit():Void
+	
+	public function new(dummy:Int, dummy2:Engine)
 	{
-		_healthpoints -= 1;
-		propertyChanged("_healthpoints", _healthpoints);
-		actor.setFilter([createNegativeFilter()]);
-		runLater(1000 * .1, function(timeTask:TimedTask):Void
-		{
-			actor.clearFilters();
-		}, actor);
-	}
-	
-	
-	public function new(dummy:Int, actor:Actor, dummy2:Engine)
-	{
-		super(actor);
-		nameMap.set("health points", "_healthpoints");
-		_healthpoints = 0.0;
+		super();
+		nameMap.set("blurRadius", "_blurRadius");
+		_blurRadius = 0.0;
+		nameMap.set("s", "_s");
 		
 	}
 	
@@ -98,21 +89,9 @@ class ActorEvents_2 extends ActorScript
 	{
 		
 		/* ======================== When Creating ========================= */
-		_healthpoints = asNumber(3);
-		propertyChanged("_healthpoints", _healthpoints);
-		
-		/* ======================== When Updating ========================= */
-		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
-		{
-			if(wrapper.enabled)
-			{
-				if((_healthpoints <= 0))
-				{
-					playSound(getSound(8));
-					recycleActor(actor);
-				}
-			}
-		});
+		/* This prevents the Hero from freezing if
+he exits the screen. */
+		getActor(1).makeAlwaysSimulate();
 		
 	}
 	
