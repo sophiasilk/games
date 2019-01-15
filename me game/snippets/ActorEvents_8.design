@@ -45,7 +45,7 @@
                         <set-dxy comment="false" x="37" y="73">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="0"/>
-                            <int id="2" val="-5"/>
+                            <int id="2" val="-10"/>
                         </set-dxy>
                     </group>
                     <keystate comment="false" id="0" x="0" y="0">
@@ -58,7 +58,7 @@
                         <set-dxy comment="false" x="37" y="145">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="0"/>
-                            <int id="2" val="5"/>
+                            <int id="2" val="10"/>
                         </set-dxy>
                     </group>
                     <keystate comment="false" id="0" x="0" y="0">
@@ -141,4 +141,14 @@
         </event-collide-actortoactor>
     </group>
     <group eventID="4" id="-1"/>
+    <group eventID="5" id="0">
+        <step comment="false" x="15" y="15">
+            <group eventID="5" id="-1">
+                <camera-follow comment="false" x="26" y="40">
+                    <ACTOR eid="this" id="0"/>
+                </camera-follow>
+            </group>
+        </step>
+    </group>
+    <group eventID="5" id="-1"/>
 </groups>
