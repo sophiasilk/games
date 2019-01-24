@@ -15,7 +15,7 @@
     <snippet actorid="8" attachedevent="true" class="scripts.ActorEvents_8" classname="scripts.ActorEvents_8" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="3" name="ActorEvents_8" oid="-1" package="scripts." shared="false" type="actor">
         <blocks/>
         <events>
-            <event displayName="Updating" enabled="false" id="1" name="step" order="1" repeats="true"/>
+            <event displayName="Updating" enabled="true" id="1" name="step" order="1" repeats="true"/>
             <event displayName="Updating" enabled="true" id="2" name="step" order="5" repeats="true"/>
             <event displayName="Updating" enabled="true" id="3" name="step" order="2" repeats="true"/>
             <event displayName="Actor - Actor" enabled="true" id="4" name="event-collide-actortoactor" order="3" repeats="true"/>
